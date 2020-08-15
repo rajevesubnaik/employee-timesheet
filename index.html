@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Timesheet Inc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Employee Timesheet Inc</h1>
+    
+    <label for="sort">Sort By:</label>
+    <select name="sort-employee" id="sort">
+        <option value="name">Name</option>
+        <option value="clocked-in">Clocked-In</option>
+        <option value="clocked-out">Clocked-Out</option>
+        <option value="on-break">On Break</option>
+    </select>
+
+    <button>+ Add Employee</button>
+
+    <form action="index.html" method="post">
+        <h1>Employee Info</h1>
+        <h1>X</h1>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name">
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+
+        <label for="role">Role:</label>
+        <input type="text" name="role" id="role">
+
+        <button type="submit">Save</button>
+    </form>
+
+
+    <script src="app.js"></script>
+
+    <ul>
+        <li>
+            <h1>Smith Jane</h1>
+            <h3>Role: UI/UX Designer</h3>
+            <button>Clock Out</button>
+            <button>Take Break</button>
+            <button>Remove</button>
+            <small>Clocked-In: 9:02 AM</small>
+            <small>Day Total: 5h 56m 19s</small>
+        </li>
+        <li>
+            <h1>Subnaik Rajeve</h1>
+            <h3>Role: Front End Developer</h3>
+            <button>Clock Out</button>
+            <button>Take Break</button>
+            <button>Remove</button>
+            <small>Clocked-In: 7:58 AM</small>
+            <small>Day Total: 6h 59m 19s</small>
+        </li>
+        <li>
+            <h1>Anderson Dave</h1>
+            <h3>Role: iOS Developer</h3>
+            <button>Clock Out</button>
+            <button>Take Break</button>
+            <button>Remove</button>
+            <small>Clocked-In: 8:00 AM</small>
+            <small>Day Total: 6h 57m 19s</small>
+        </li>
+    </ul>
+
+    <footer><small>&copy;2020 Employee Timesheet Inc</small></footer>
+</body>
+</html>
