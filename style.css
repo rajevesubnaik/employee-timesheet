@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+}
+
+main {
+    margin-left: 2.65em;
+    margin-right: 2.65em;
+}
+
+header {
+    background-color: #268CFF;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+}
+
+.make-red {
+    color: #FF5024;
+}
+
+.add-employee-btn {
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #4bc970;
+    color: #fff;
+}
+
+form {
+    display: none;
+    background-color: #c5e2fd;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+form h1 {
+    display: inline;
+}
+
+form .close {
+    float: right;
+    cursor: pointer;
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: .2em;
+    margin-bottom: 2em;
+    height: auto;
+}
+
+label,
+input,
+button {
+    font-size: 1.2em;
+}
+
+.sort-employee,
+form,
+button,
+li {
+    border-radius: .25em;
+}
+
+.add-employee-btn,
+form label,
+form input {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: lightgray;
+    margin-top: 1em;
+    padding: .45em;
+}
+
+.In {
+    color: green;
+}
+
+.Out {
+    color: red;
+}
+
+.btns {
+    display: flex;
+}
+
+.btns button {
+    padding: .25em 0;
+    width: 100%;
+    margin: .125em .3em;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.clock-in {
+    background-color: green;
+    color: white;
+}
+
+.clock-out {
+    background-color: red;
+    color: white;
+}
+
+.remove {
+    background-color: #000;
+    color: #fff;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: #FF5024;
+    padding: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+}
