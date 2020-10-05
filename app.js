@@ -1,13 +1,5 @@
 let employees = [
     {
-        lastName: 'Smith',
-        firstName: 'Jane',
-        role: 'UI/UX Designer',
-        status: 'In',
-        timeIn: new Date(0, 0, 0, 6, 02, 08),
-        timeOut: '-'
-    },
-    {
         lastName: 'Subnaik',
         firstName: 'Rajeve',
         role: 'Front End Developer',
@@ -16,13 +8,30 @@ let employees = [
         timeOut: '-'
     },
     {
-        lastName: 'Anderson',
-        firstName: 'Dave',
+        lastName: 'Smith',
+        firstName: 'Jane',
+        role: 'UI/UX Designer',
+        status: 'In',
+        timeIn: new Date(0, 0, 0, 6, 00, 05),
+        timeOut: '-'
+    },
+    {
+        lastName: 'Campbell',
+        firstName: 'Stacy',
         role: 'iOS Developer',
         status: 'In',
-        timeIn: new Date(0, 0, 0, 6, 01, 23),
+        timeIn: new Date(0, 0, 0, 6, 00, 23),
+        timeOut: '-'
+    },
+    {
+        lastName: 'Dixon',
+        firstName: 'Raymond',
+        role: 'Python Developer',
+        status: 'In',
+        timeIn: new Date(0, 0, 0, 6, 01, 46),
         timeOut: '-'
     }
+
 ]
 
 const addEmployeeBtn = document.getElementsByClassName('add-employee-btn')[0];
@@ -33,11 +42,11 @@ const liAll = listUl.children;
 let employee;
 
 addEmployeeBtn.addEventListener('click', () => {
-    form.style.display = 'block';
+    form.classList.toggle('show');
 })
 
 formClose.addEventListener('click', () => {
-    form.style.display = 'none';
+    form.classList.toggle('show');
 })
 
 form.addEventListener('submit', (event) => {
