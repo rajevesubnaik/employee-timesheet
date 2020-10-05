@@ -142,7 +142,7 @@ function setDayTotal () {
             const dayTotal = liAll[i].querySelector('.dayTotal');
             const currentTime = new Date();
             const timeElapsed = currentTime - employeeDay.timeIn;
-            const hh = parseInt((timeElapsed/3600/1000)%24);
+            const hh = parseInt((timeElapsed/3600/1000)%24) + 1;
             const mm = parseInt((timeElapsed/60/1000)%60);
             const ss = parseInt((timeElapsed/1000)%60);
             dayTotal.textContent = `${hh}h ${mm}m ${ss}s`;
