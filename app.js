@@ -4,7 +4,7 @@ let employees = [
         firstName: 'Rajeve',
         role: 'Front End Developer',
         status: 'In',
-        timeIn: new Date(0, 0, 0, 5, 58, 59),
+        timeIn: new Date('October 5, 2020 05:58:59'),
         timeOut: '-'
     },
     {
@@ -12,7 +12,7 @@ let employees = [
         firstName: 'Jane',
         role: 'UI/UX Designer',
         status: 'In',
-        timeIn: new Date(0, 0, 0, 6, 00, 05),
+        timeIn: new Date('October 5, 2020 06:00:05'),
         timeOut: '-'
     },
     {
@@ -20,7 +20,7 @@ let employees = [
         firstName: 'Stacy',
         role: 'iOS Developer',
         status: 'In',
-        timeIn: new Date(0, 0, 0, 6, 00, 23),
+        timeIn: new Date('October 5, 2020 06:00:23'),
         timeOut: '-'
     },
     {
@@ -28,7 +28,7 @@ let employees = [
         firstName: 'Raymond',
         role: 'Python Developer',
         status: 'In',
-        timeIn: new Date(0, 0, 0, 6, 01, 46),
+        timeIn: new Date('October 5, 2020 06:01:46'),
         timeOut: '-'
     }
 
@@ -142,7 +142,7 @@ function setDayTotal () {
             const dayTotal = liAll[i].querySelector('.dayTotal');
             const currentTime = new Date();
             const timeElapsed = currentTime - employeeDay.timeIn;
-            const hh = parseInt((timeElapsed/3600/1000)%24) + 1;
+            const hh = parseInt((timeElapsed/3600/1000)%24);
             const mm = parseInt((timeElapsed/60/1000)%60);
             const ss = parseInt((timeElapsed/1000)%60);
             dayTotal.textContent = `${hh}h ${mm}m ${ss}s`;
