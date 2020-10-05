@@ -154,7 +154,7 @@ footer {
     form {
         display: block;
         margin-top: 1em;
-        min-height: calc(100vh - 156px);
+        min-height: calc(100vh - 182px);
     }
 
     .add-employee-btn,
