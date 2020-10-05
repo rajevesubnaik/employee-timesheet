@@ -45,6 +45,10 @@ form {
     padding-right: 2em;
 }
 
+.show {
+    display: block;
+}
+
 form h1 {
     display: inline;
 }
@@ -139,4 +143,31 @@ footer {
     padding: 1.5em;
     text-align: center;
     margin-top: 1em;
+}
+
+@media (min-width: 769px) {
+    main {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    form {
+        display: block;
+        margin-top: 1em;
+        min-height: calc(100vh - 156px);
+    }
+
+    .add-employee-btn,
+    .close {
+        display: none;
+    }
+
+    main {
+        display: flex;
+    }
+
+    ul {
+        width: 100%;
+        margin-left: 2.65em;
+    }
 }
