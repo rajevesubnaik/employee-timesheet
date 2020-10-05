@@ -162,7 +162,7 @@ footer {
         display: none;
     }
 
-    main {
+    .main-content {
         display: flex;
     }
 
