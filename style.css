@@ -12,6 +12,7 @@ body {
 main {
     margin-left: 2.65em;
     margin-right: 2.65em;
+    min-height: calc(100vh - 159px);
 }
 
 header {
