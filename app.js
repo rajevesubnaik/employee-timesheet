@@ -1,10 +1,11 @@
+// initial employees
 let employees = [
     {
         lastName: 'Subnaik',
         firstName: 'Rajeve',
         role: 'Front End Developer',
         status: 'In',
-        timeIn: new Date('October 5, 2020 05:58:59'),
+        timeIn: new Date('November 7, 2020 05:58:59'),
         timeOut: '-'
     },
     {
@@ -12,7 +13,7 @@ let employees = [
         firstName: 'Jane',
         role: 'UI/UX Designer',
         status: 'In',
-        timeIn: new Date('October 5, 2020 06:00:05'),
+        timeIn: new Date('November 7, 2020 06:00:05'),
         timeOut: '-'
     },
     {
@@ -20,7 +21,7 @@ let employees = [
         firstName: 'Stacy',
         role: 'iOS Developer',
         status: 'In',
-        timeIn: new Date('October 5, 2020 06:00:23'),
+        timeIn: new Date('November 7, 2020 06:00:23'),
         timeOut: '-'
     },
     {
@@ -28,12 +29,13 @@ let employees = [
         firstName: 'Raymond',
         role: 'Python Developer',
         status: 'In',
-        timeIn: new Date('October 5, 2020 06:01:46'),
+        timeIn: new Date('November 7, 2020 06:01:46'),
         timeOut: '-'
     }
 
 ]
 
+// select dom elements
 const addEmployeeBtn = document.getElementsByClassName('add-employee-btn')[0];
 const form = document.getElementsByTagName('form')[0];
 const formClose = document.getElementsByClassName('close')[0];
@@ -41,14 +43,17 @@ const listUl = document.querySelector('ul');
 const liAll = listUl.children;
 let employee;
 
+// show form when add employee is clicked on mobile
 addEmployeeBtn.addEventListener('click', () => {
     form.classList.toggle('show');
 })
 
+// close form when close button is clicke on mobile
 formClose.addEventListener('click', () => {
     form.classList.toggle('show');
 })
 
+// emoloyee info is created and then sent to the addEmployee() 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const lastName = document.getElementById('last_name');
@@ -88,6 +93,7 @@ function addEmployeeLi (employee) {
     listUl.appendChild(newEmployee);
 }
 
+// loop through array of employee objects and create list
 function drawListEmployees () {
     for (let i = 0; i < employees.length; i++) {
         employee = employees[i];
@@ -96,18 +102,21 @@ function drawListEmployees () {
 }
 
 
-
+// add event listner to employee status buttons
 listUl.addEventListener('click', (event) => {
     const liIndexes = [];
     for (let i = 0; i < liAll.length; i++) {
         liIndexes.push(liAll[i]);
     }
     if (event.target.tagName == 'BUTTON') {
+        // select nodes when a button is clicked
         const liNode = event.target.parentNode.parentNode;
         const index = liIndexes.indexOf(liNode);
         const statusNode = liNode.querySelector('.status');
         const dayIn = liNode.querySelector('.dayIn');
         const dayOut = liNode.querySelector('.dayOut');
+        
+        // if clocked in button is clicked, employee status is set to in and clock starts
         if (event.target.className == 'clock-in') {
             employees[index].timeIn = new Date();
             employees[index].status = 'In';
@@ -117,6 +126,8 @@ listUl.addEventListener('click', (event) => {
             dayIn.textContent = employees[index].timeIn.toLocaleTimeString();
             dayOut.textContent = '-';
         } 
+
+        // if clocked out button is clicked, employee status is set to out and clock stops
         if (event.target.className == 'clock-out') {
             employees[index].timeOut = new Date().toLocaleTimeString();
             employees[index].status = 'Out';
@@ -125,6 +136,7 @@ listUl.addEventListener('click', (event) => {
             statusNode.textContent = employees[index].status;
             dayOut.textContent = employees[index].timeOut;
         }
+        // employee is removed when clicked
         if (event.target.className == 'remove') {
             console.log(index);
             listUl.removeChild(liNode);
@@ -135,6 +147,7 @@ listUl.addEventListener('click', (event) => {
     
 })
 
+// calculates how long an employee has been clocked in
 function setDayTotal () {
     for (let i = 0; i < employees.length; i++) {
         const employeeDay = employees[i];
@@ -152,4 +165,5 @@ function setDayTotal () {
 }
 
 drawListEmployees();
+// clock updates every second
 setInterval(setDayTotal, 1000);
